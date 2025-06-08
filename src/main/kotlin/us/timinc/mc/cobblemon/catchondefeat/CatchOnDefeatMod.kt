@@ -14,7 +14,7 @@ import us.timinc.mc.cobblemon.catchondefeat.eventhandlers.ThrownPokeballHitHandl
 object CatchOnDefeatMod {
     const val MOD_ID = "catchondefeat"
 
-    @Suppress("MemberVisibilityCanBePrivate")
+    @Suppress("MemberVisibilityCanBePrivate", "JoinDeclarationAndAssignment")
     var config: CatchOnDefeatConfig
 
     init {
