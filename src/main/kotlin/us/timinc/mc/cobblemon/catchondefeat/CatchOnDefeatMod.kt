@@ -7,8 +7,8 @@ import net.neoforged.fml.common.Mod
 import us.timinc.mc.cobblemon.catchondefeat.config.CatchOnDefeatConfig
 import us.timinc.mc.cobblemon.catchondefeat.config.ConfigBuilder
 import us.timinc.mc.cobblemon.catchondefeat.customproperties.CatchOnDefeatProperties
-import us.timinc.mc.cobblemon.catchondefeat.eventhandlers.BattleFaintedHandler
-import us.timinc.mc.cobblemon.catchondefeat.eventhandlers.ThrownPokeballHitHandler
+import us.timinc.mc.cobblemon.catchondefeat.event.handler.AttemptJoinOnDefeatHandler
+import us.timinc.mc.cobblemon.catchondefeat.event.handler.CancelPokeballHitWhenOnlyJoinByDefeatHandler
 
 @Mod(CatchOnDefeatMod.MOD_ID)
 object CatchOnDefeatMod {
@@ -27,7 +27,10 @@ object CatchOnDefeatMod {
             CatchOnDefeatProperties.register()
         }
 
-        CobblemonEvents.BATTLE_FAINTED.subscribe(Priority.LOWEST, BattleFaintedHandler::handle)
-        CobblemonEvents.THROWN_POKEBALL_HIT.subscribe(Priority.LOWEST, ThrownPokeballHitHandler::handle)
+        CobblemonEvents.BATTLE_FAINTED.subscribe(Priority.LOWEST, AttemptJoinOnDefeatHandler::handle)
+        CobblemonEvents.THROWN_POKEBALL_HIT.subscribe(
+            Priority.LOWEST,
+            CancelPokeballHitWhenOnlyJoinByDefeatHandler::handle
+        )
     }
 }
