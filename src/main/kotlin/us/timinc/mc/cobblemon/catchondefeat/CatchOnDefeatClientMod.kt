@@ -8,5 +8,6 @@ import us.timinc.mc.cobblemon.catchondefeat.config.ConfigBuilder
 
 @Mod(MOD_ID, dist = [Dist.CLIENT])
 object CatchOnDefeatClientMod {
-    var config: CatchOnDefeatClientConfig = ConfigBuilder.load(CatchOnDefeatClientConfig::class.java, "${MOD_ID}_client")
+    var config: CatchOnDefeatClientConfig =
+        ConfigBuilder.load(CatchOnDefeatClientConfig::class.java, "${MOD_ID}_client")
 }
