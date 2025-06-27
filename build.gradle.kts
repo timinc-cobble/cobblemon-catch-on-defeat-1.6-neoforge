@@ -24,6 +24,8 @@ repositories {
     maven("https://hub.spigotmc.org/nexus/content/groups/public/")
     maven("https://thedarkcolour.github.io/KotlinForForge/")
     maven("https://maven.neoforged.net")
+    maven("https://maven.wispforest.io")
+    maven("https://maven.su5ed.dev/releases")
 }
 
 dependencies {
@@ -36,6 +38,14 @@ dependencies {
     implementation("thedarkcolour:kotlinforforge-neoforge:${property("kff_version")}") {
         exclude("net.neoforged.fancymodloader", "loader")
     }
+
+    modImplementation("io.wispforest:owo-lib-neoforge:${property("owo_version")}")
+    annotationProcessor("io.wispforest:owo-lib-neoforge:${property("owo_version")}")
+    forgeRuntimeLibrary("io.wispforest:endec:0.1.8")
+    forgeRuntimeLibrary("io.wispforest.endec:netty:0.1.4")
+    forgeRuntimeLibrary("io.wispforest.endec:gson:0.1.5")
+    forgeRuntimeLibrary("io.wispforest.endec:jankson:0.1.5")
+    forgeRuntimeLibrary("blue.endless:jankson:1.2.3")
 }
 
 tasks.getByName<Test>("test") {
