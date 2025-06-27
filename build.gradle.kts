@@ -41,7 +41,6 @@ dependencies {
 
     modImplementation("io.wispforest:owo-lib-neoforge:${property("owo_version")}")
     annotationProcessor("io.wispforest:owo-lib-neoforge:${property("owo_version")}")
-    include("io.wispforest:owo-sentinel:${property("owo_version")}")
     forgeRuntimeLibrary("io.wispforest:endec:0.1.8")
     forgeRuntimeLibrary("io.wispforest.endec:netty:0.1.4")
     forgeRuntimeLibrary("io.wispforest.endec:gson:0.1.5")
